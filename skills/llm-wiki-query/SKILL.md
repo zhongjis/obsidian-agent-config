@@ -48,6 +48,7 @@ When user asks for another form, adapt carefully:
 ## Execution rules
 - Default to wiki-first, not raw-first.
 - If filing answer back into vault, follow `vault-rules.md` and `note-standards.md` for note creation, titles, frontmatter, linking, and visual defaults.
+- If filing answer back into vault creates a new note written by AI, set frontmatter `llm-wiki-created: true`.
 - Do not create notes or diagrams unless useful or requested.
 
 ## Good query behavior

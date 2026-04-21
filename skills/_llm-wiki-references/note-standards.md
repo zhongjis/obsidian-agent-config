@@ -23,7 +23,8 @@ Read `AGENTS.md` and `vault-rules.md` first. This file defines vault-specific no
 - If no template fits, add minimum frontmatter: `created`, `modified`, `tags`.
 - Preserve meaningful existing fields such as `aliases`, `type`, `source`, `wiki`, `expense`, or `total_cost`.
 - Only normalize frontmatter on notes you create or materially update.
-- When a raw source note has been ingested and the user wants source-note state tracked in-place, set frontmatter `llm-wiki-ingested: true` on that raw note.
+- Raw markdown source notes that have been ingested must include frontmatter `llm-wiki-ingested: true`.
+- Notes originally created by the AI workflow must include frontmatter `llm-wiki-created: true`. Keep this field even if the note is later edited by a human or by AI. Omit it when note origin is human-created or unknown.
 
 ## Linking and provenance
 - Use wikilinks for internal note references: `[[Exact Note Title]]`.

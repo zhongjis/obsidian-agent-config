@@ -40,7 +40,8 @@ If needed CLI use case is not listed there, fall back to global `obsidian-cli` s
 7. Add or strengthen wikilinks.
 8. Record provenance back to raw source path.
 9. Update `index.md` or `log.md` only if present or user explicitly wants them.
-10. If user wants source-note ingest state tracked, set frontmatter `llm-wiki-ingested: true` on the ingested raw markdown note.
+10. If ingest creates a new note entirely by AI, set frontmatter `llm-wiki-created: true` on that note.
+11. For raw markdown source notes, mark ingest completion by setting frontmatter `llm-wiki-ingested: true`.
 
 ## Source routing
 Follow `../_llm-wiki-references/source-types.md`.

@@ -27,7 +27,8 @@ Audit for:
 - orphan pages
 - entities or concepts that deserve durable pages
 - provenance gaps on non-trivial synthesis
-- metadata gaps that reduce Bases / Dataview / search usefulness
+- required metadata gaps such as missing `llm-wiki-ingested: true` on ingested raw markdown notes
+- missing `llm-wiki-created: true` on notes known from workflow evidence to be AI-created
 - places where stronger raw evidence should update wiki synthesis
 
 ## Lint workflow
@@ -56,14 +57,14 @@ Each finding should include:
 - suggested fix
 
 ## Execution rules
-- Treat metadata or plugin-related issues as lint findings only when they hurt retrieval or maintenance.
+- Treat metadata or plugin-related issues as lint findings only when they hurt retrieval or maintenance, or when they violate required vault fields.
 - Prefer actionable findings over exhaustive noise.
 - Keep churn low.
-- Use `note-standards.md` when judging title, frontmatter, linking, and visual-format consistency, but only report issues that hurt retrieval or maintenance.
+- Use `note-standards.md` when judging title, frontmatter, linking, and visual-format consistency, but do not guess ingest state or authorship without workflow evidence.
 
 ## Non-goals
 - Do not turn this into prose nitpicking.
 - Do not bulk-retrofit untouched legacy notes.
 - Do not reorganize vault structure unless user explicitly asks.
 - Do not silently fix everything unless user asked for direct maintenance.
-- Do not enforce a new metadata schema without evidence that existing Bases or workflows need it.
+- Do not invent or enforce ad-hoc metadata beyond required vault fields such as `llm-wiki-ingested` and `llm-wiki-created` unless evidence shows an existing workflow needs it.

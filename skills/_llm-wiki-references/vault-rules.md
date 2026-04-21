@@ -5,8 +5,9 @@ Read `note-standards.md` for note titles, frontmatter, linking, and visual defau
 
 ## Core model
 - `raw/` is raw source root.
-- Raw sources are immutable inputs. Read, cite, compare, summarize. Do not edit, rename, move, or delete raw files unless user explicitly asks.
-- If user wants ingest state tracked on raw markdown source notes, add frontmatter `llm-wiki-ingested: true` once their knowledge has been absorbed into the wiki.
+- Raw sources are immutable inputs. Read, cite, compare, summarize. Do not edit, rename, move, or delete raw files unless user explicitly asks. Exception: during ingest or lint, raw markdown source notes may receive required schema frontmatter updates.
+- Raw markdown source notes are considered ingested only after their knowledge has been absorbed into the wiki, provenance to the raw path has been recorded, and frontmatter `llm-wiki-ingested: true` has been set.
+- Notes originally created by the AI workflow must include frontmatter `llm-wiki-created: true`.
 - Wiki pages live flat in vault root. Do not create topic subfolders for wiki pages.
 - When classifying root wiki notes, prefer tags over folders. Use slash-style role tags like `llm-wiki/durable`, `llm-wiki/dated`, and `llm-wiki/source`.
 - `_Templates/` holds Templater templates.
@@ -31,6 +32,7 @@ Read `note-standards.md` for note titles, frontmatter, linking, and visual defau
 
 ## Workflow boundaries
 - Ingest: read raw source, extract claims/topics/entities/dates/open questions, update existing pages first, create new root wiki page only when durable retrieval value is clear.
+- If ingest creates a new note, and that note is AI-created, set frontmatter `llm-wiki-created: true`.
 - Query: search wiki first, consult raw only when wiki is missing, stale, incomplete, or disputed.
 - Lint: audit knowledge quality, not prose style.
 
