@@ -2,6 +2,14 @@
 
 Read `AGENTS.md` and `vault-rules.md` first. This file defines vault-specific note creation and update conventions for LLM work.
 
+## Atomicity
+- Each wiki note covers **one core topic**. One concept, one entity, one decision, or one tightly-scoped synthesis.
+- Aim for **around 500 words** of body text per note (excluding frontmatter, Mermaid blocks, and embedded assets). Not a hard limit — split when a note grows well beyond this.
+- If a note would cover multiple distinct topics, split into separate notes and link them with wikilinks.
+- During ingest, distribute knowledge across atomic notes rather than creating one compound note.
+- When an existing note grows beyond scope, split it: extract secondary topics into new notes, leave wikilinks in the original.
+- Atomic does not mean shallow. A note can be detailed and thorough about its single topic.
+
 ## Placement
 - Root `.md` files are wiki pages. Keep wiki pages flat in vault root.
 - `_Templates/` stores Templater templates only.
@@ -21,10 +29,13 @@ Read `AGENTS.md` and `vault-rules.md` first. This file defines vault-specific no
 - When a note pattern fits an existing template, use the closest Templater template from `_Templates/` and let the template own the note scaffold.
 - Reusable note patterns should live in `_Templates/` and be handled through Templater rather than ad-hoc manual note creation.
 - If no template fits, add minimum frontmatter: `created`, `modified`, `tags`.
+- Recommended for new/updated notes: `summary` (one-line ≤200 chars for cheap AI retrieval), `sources` (list of raw paths or URLs for provenance).
+- When tagging, include one role tag (`llm-wiki/durable`, `llm-wiki/dated`, or `llm-wiki/source`). For new notes, also consider a category tag: `llm-wiki/concept`, `llm-wiki/entity`, `llm-wiki/reference`, or `llm-wiki/synthesis`.
 - Preserve meaningful existing fields such as `aliases`, `type`, `source`, `wiki`, `expense`, or `total_cost`.
 - Only normalize frontmatter on notes you create or materially update.
+- When materially updating a note with legacy `#zettelkasten/*` tags, reclassify to appropriate `llm-wiki/*` tags. See [[2026-04-21 LLM-Wiki Workflow]] for migration mapping.
 - Raw markdown source notes that have been ingested must include frontmatter `llm-wiki-ingested: true`.
-- Notes originally created by the AI workflow must include frontmatter `llm-wiki-created: true`. Keep this field even if the note is later edited by a human or by AI. Omit it when note origin is human-created or unknown.
+- Notes originally created by the AI workflow must include frontmatter `llm-wiki-created: true`. Keep this field even if the note is later edited by a human or by AI. Notes without this field are assumed human-created.
 
 ## Linking and provenance
 - Use wikilinks for internal note references: `[[Exact Note Title]]`.

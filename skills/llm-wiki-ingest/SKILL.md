@@ -38,10 +38,12 @@ If needed CLI use case is not listed there, fall back to global `obsidian-cli` s
 5. Update those notes first.
 6. Create one new root wiki page only if existing notes cannot absorb the material cleanly.
 7. Add or strengthen wikilinks.
-8. Record provenance back to raw source path.
-9. Update `index.md` or `log.md` only if present or user explicitly wants them.
-10. If ingest creates a new note entirely by AI, set frontmatter `llm-wiki-created: true` on that note.
-11. For raw markdown source notes, mark ingest completion by setting frontmatter `llm-wiki-ingested: true`.
+8. Record provenance: populate `sources:` frontmatter field linking back to raw source path.
+9. When creating or materially updating a wiki page, add or refresh `summary:` frontmatter (≤200 chars).
+10. Update `index.md` or `log.md` only if present or user explicitly wants them.
+11. If ingest creates a new note entirely by AI, set frontmatter `llm-wiki-created: true` on that note.
+12. For raw markdown source notes, mark ingest completion by setting frontmatter `llm-wiki-ingested: true`.
+13. When ingest touches a note with legacy `#zettelkasten/*` tags, reclassify to appropriate `llm-wiki/*` tags per [[2026-04-21 LLM-Wiki Workflow]].
 
 ## Source routing
 Follow `../_llm-wiki-references/source-types.md`.

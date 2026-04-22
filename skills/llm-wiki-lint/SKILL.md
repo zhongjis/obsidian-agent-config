@@ -28,7 +28,11 @@ Audit for:
 - entities or concepts that deserve durable pages
 - provenance gaps on non-trivial synthesis
 - required metadata gaps such as missing `llm-wiki-ingested: true` on ingested raw markdown notes
-- missing `llm-wiki-created: true` on notes known from workflow evidence to be AI-created
+- missing `llm-wiki-created: true` on notes known from workflow evidence to be AI-created (notes without this field are assumed human-created — do not flag absence alone)
+- missing `summary:` field on notes materially updated since workflow adoption
+- missing `sources:` provenance on AI-created or recently ingested notes
+- legacy `#zettelkasten/*` tags on notes that could be reclassified to `llm-wiki/*` (report as suggestion, do not auto-fix)
+- suggested cross-links between related notes (report-only — never auto-insert)
 - places where stronger raw evidence should update wiki synthesis
 
 ## Lint workflow

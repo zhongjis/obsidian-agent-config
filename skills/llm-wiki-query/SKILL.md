@@ -18,8 +18,16 @@ Answer questions from maintained wiki knowledge first, then use raw sources only
 Use `../_llm-wiki-references/obsidian-cli-fast-path.md` first for common wiki search/read/context/backlink work.
 If needed CLI use case is not listed there, fall back to global `obsidian-cli` skill.
 
+## Retrieval cost escalation
+Escalate only when cheaper tier cannot answer:
+1. **Tag/frontmatter scan** — filter by tags, dates, metadata fields
+2. **Summary field** — read `summary:` frontmatter (≤200 chars per note)
+3. **Section grep** — targeted extraction from headings or paragraphs
+4. **Full page read** — expensive at scale, use only for strong candidates
+5. **Vault-wide scan** — last resort
+
 ## Query workflow
-1. Search relevant wiki pages first.
+1. Search relevant wiki pages first (use retrieval cost escalation above).
 2. Read the strongest candidate notes.
 3. Synthesize answer from wiki content.
 4. Consult raw sources only when:
