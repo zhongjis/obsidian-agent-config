@@ -33,3 +33,4 @@ Read `AGENTS.md` and `vault-rules.md` first. This file covers plugin-specific be
 ## Reserved content
 - `_Attachments/` stays out of scope unless user explicitly asks.
 - Do not reorganize Excalidraw files, Bases files, or templates unless user explicitly asks.
+- `llm-wiki-internal/` is agent-writable for operational metadata (logs, tracking Bases). Not for wiki content.

@@ -11,9 +11,10 @@ Read `AGENTS.md` and `vault-rules.md` first. This file defines vault-specific no
 - Atomic does not mean shallow. A note can be detailed and thorough about its single topic.
 
 ## Placement
-- Root `.md` files are wiki pages. Keep wiki pages flat in vault root.
+- Root `.md` files are wiki pages. Keep wiki pages flat in vault root. Exception: operational log in `llm-wiki-internal/log.md`.
 - `_Templates/` stores Templater templates only.
 - `Excalidraw/` stores Excalidraw drawings only.
+- `llm-wiki-internal/` stores operational metadata (activity logs, tracking Bases). Not for durable wiki notes.
 - Mermaid diagrams stay embedded in their parent note.
 - `_Attachments/` remains reserved unless user explicitly asks.
 

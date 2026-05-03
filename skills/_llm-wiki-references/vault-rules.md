@@ -4,14 +4,15 @@ Read `AGENTS.md` first. This file expands wiki-writing rules; it does not overri
 Read `note-standards.md` for note titles, frontmatter, linking, and visual defaults.
 
 ## Core model
-- `raw/` is raw source root.
+- `raw/` is an immutable archive of source material. Most raw notes remain as inert archive, not a backlog.
 - Raw sources are immutable inputs. Read, cite, compare, summarize. Do not edit, rename, move, or delete raw files unless user explicitly asks. Exception: during ingest or lint, raw markdown source notes may receive required schema frontmatter updates.
-- Raw markdown source notes are considered ingested only after their knowledge has been absorbed into the wiki, provenance to the raw path has been recorded, and frontmatter `llm-wiki-ingested: true` has been set.
+- `llm-wiki-ingested: true` marks the subset of raw notes promoted into wiki synthesis (knowledge absorbed into the wiki, provenance to the raw path recorded). Absence of the flag is **not** a backlog signal. Ingest is opt-in — promote a raw note only when it has durable, reusable value worth compiling. Natural trigger: a query surfaces the raw note as evidence worth hoisting into durable wiki form.
 - Notes originally created by the AI workflow must include frontmatter `llm-wiki-created: true`. Notes without this field are assumed human-created.
-- Wiki pages live flat in vault root. Do not create topic subfolders for wiki pages.
+- Wiki pages live flat in vault root. Do not create topic subfolders for wiki pages. Exception: operational metadata lives in `llm-wiki-internal/`.
 - When classifying root wiki notes, prefer tags over folders. Use slash-style role tags like `llm-wiki/durable`, `llm-wiki/dated`, and `llm-wiki/source`.
 - `_Templates/` holds Templater templates.
 - `_Attachments/` is reserved and out of scope unless user explicitly asks.
+- `llm-wiki-internal/` holds operational metadata: activity log (`llm-wiki-internal/log.md`) and tracking Bases. Agents write here during ingest/lint. Not wiki content — durable wiki notes still live in vault root.
 - `Excalidraw/` holds drawings, not normal wiki pages.
 - Root `.base` files are Obsidian Bases views, not wiki pages.
 
@@ -43,14 +44,14 @@ Read `note-standards.md` for note titles, frontmatter, linking, and visual defau
 Escalate only when cheaper tier cannot answer:
 1. Tag/frontmatter scan — filter by tags, dates, metadata
 2. Summary field — read `summary:` frontmatter (≤200 chars per note)
-3. Section grep — targeted extraction from headings or paragraphs
+3. Section search (rg) — targeted extraction from headings or paragraphs
 4. Full page read — expensive at scale
 5. Vault-wide scan — last resort
 
 ## Index and log
-- `index.md` and `log.md` are optional.
-- Update them if present.
-- Create them only if user asks or there is a clear ongoing retrieval/maintenance benefit.
+- `index.md` is optional.
+- Activity log is optional at `llm-wiki-internal/log.md` — a single append-only file with `## [YYYY-MM-DD] category | description` entries.
+- Append to the current-day log file (create if absent) only when user wants a log entry or the task is materially large. Do not auto-log micro-ingests.
 
 ## Churn limits
 - No mass cleanup, wide rewrites, or speculative restructuring.

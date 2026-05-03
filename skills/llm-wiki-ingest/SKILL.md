@@ -40,7 +40,7 @@ If needed CLI use case is not listed there, fall back to global `obsidian-cli` s
 7. Add or strengthen wikilinks.
 8. Record provenance: populate `sources:` frontmatter field linking back to raw source path.
 9. When creating or materially updating a wiki page, add or refresh `summary:` frontmatter (≤200 chars).
-10. Update `index.md` or `log.md` only if present or user explicitly wants them.
+10. Update `index.md` only if present. Append to `llm-wiki-internal/log.md` (create if absent) when user wants a log entry or the task is materially large. Do not auto-log micro-ingests. Entry format: `## [YYYY-MM-DD] category | description` with bullets below.
 11. If ingest creates a new note entirely by AI, set frontmatter `llm-wiki-created: true` on that note.
 12. For raw markdown source notes, mark ingest completion by setting frontmatter `llm-wiki-ingested: true`.
 13. When ingest touches a note with legacy `#zettelkasten/*` tags, reclassify to appropriate `llm-wiki/*` tags per [[2026-04-21 LLM-Wiki Workflow]].
@@ -65,4 +65,4 @@ When reporting back after ingest, summarize:
 - Do not bulk-create thin notes from one source.
 - Do not reorganize raw collections during ingest unless user explicitly asks.
 - Do not rewrite legacy wiki notes for style alone.
-- Do not create visual artifacts, `index.md`, or `log.md` by default.
+- Do not create visual artifacts, `index.md`, or log entries by default.

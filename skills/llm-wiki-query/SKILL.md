@@ -22,7 +22,7 @@ If needed CLI use case is not listed there, fall back to global `obsidian-cli` s
 Escalate only when cheaper tier cannot answer:
 1. **Tag/frontmatter scan** — filter by tags, dates, metadata fields
 2. **Summary field** — read `summary:` frontmatter (≤200 chars per note)
-3. **Section grep** — targeted extraction from headings or paragraphs
+3. **Section search (rg)** — targeted extraction from headings or paragraphs
 4. **Full page read** — expensive at scale, use only for strong candidates
 5. **Vault-wide scan** — last resort
 
