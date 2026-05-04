@@ -36,14 +36,15 @@ If needed CLI use case is not listed there, fall back to global `obsidian-cli` s
    - useful quotations or figures when precision matters
 4. Search for existing wiki notes that should absorb the new knowledge.
 5. Update those notes first.
-6. Create one new root wiki page only if existing notes cannot absorb the material cleanly.
+6. Create one new root wiki page only if existing notes cannot absorb the material cleanly. For high-use topics, prefer updating an existing Topic Hub over creating a separate yellowbook or index note; use a concise Quickstart note for procedural overflow.
 7. Add or strengthen wikilinks.
-8. Record provenance: populate `sources:` frontmatter field linking back to raw source path.
-9. When creating or materially updating a wiki page, add or refresh `summary:` frontmatter (≤200 chars).
-10. Update `index.md` only if present. Append to `llm-wiki-internal/log.md` (create if absent) when user wants a log entry or the task is materially large. Do not auto-log micro-ingests. Entry format: `## [YYYY-MM-DD] category | description` with bullets below.
-11. If ingest creates a new note entirely by AI, set frontmatter `llm-wiki-created: true` on that note.
-12. For raw markdown source notes, mark ingest completion by setting frontmatter `llm-wiki-ingested: true`.
-13. When ingest touches a note with legacy `#zettelkasten/*` tags, reclassify to appropriate `llm-wiki/*` tags per [[2026-04-21 LLM-Wiki Workflow]].
+8. If the ingest changes a high-use topic's URLs, config references, or note set, update only the relevant Topic Hub's one-sentence orientation, `# Quick reference`, or `# Index`. Do not add summary, key-points, architecture, checklist, or other synthesis sections to the hub.
+9. Record provenance: populate `sources:` frontmatter field linking back to raw source path.
+10. When creating or materially updating a wiki page, add or refresh `summary:` frontmatter (≤200 chars).
+11. Update `index.md` only if present. Append to `llm-wiki-internal/log.md` (create if absent) when user wants a log entry or the task is materially large. Do not auto-log micro-ingests. Entry format: `## [YYYY-MM-DD] category | description` with bullets below.
+12. If ingest creates a new note entirely by AI, set frontmatter `llm-wiki-created: true` on that note.
+13. For raw markdown source notes, mark ingest completion by setting frontmatter `llm-wiki-ingested: true`.
+14. When ingest touches a note with legacy `#zettelkasten/*` tags, reclassify to appropriate `llm-wiki/*` tags per [[2026-04-21 LLM-Wiki Workflow]].
 
 ## Source routing
 Follow `../_llm-wiki-references/source-types.md`.

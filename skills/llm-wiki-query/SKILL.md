@@ -36,7 +36,7 @@ Escalate only when cheaper tier cannot answer:
    - wiki notes disagree
    - user asks for raw-source validation
 5. Cite supporting wiki pages and raw paths used.
-6. If answer is durable and valuable, offer to file it back into the wiki.
+6. If answer is durable and valuable, offer to file it back into the wiki. For high-use topics with an existing Topic Hub, offer to update only the hub's one-sentence orientation, quick references, or index when that would save future rediscovery; suggest a Quickstart note for procedural overflow.
 
 ## Output modes
 Default output is normal markdown in chat.

@@ -20,6 +20,7 @@ Read `note-standards.md` for note titles, frontmatter, linking, and visual defau
 - Prefer updating existing durable notes over creating new notes.
 - **Atomic notes**: one core topic per wiki note. Aim for around 500 words body text. If a note covers multiple distinct topics, split into separate linked notes. Use wikilinks to connect split notes.
 - During ingest, distribute extracted knowledge across the right atomic notes rather than creating one large compound note.
+- **Topic Hubs** are allowed for high-use systems or topics that otherwise scatter quick links and subnote indexes across many pages. A Topic Hub is still a root wiki page named `YYYY-MM-DD Topic`; its body must contain exactly one sentence of summary/orientation, `# Quick reference`, and `# Index`. Do not add hub-only `# Summary`, `# Key points`, architecture, checklist, or other synthesis sections. Keep details in atomic subnotes; put procedural overflow in a concise `YYYY-MM-DD Topic Quickstart` note when needed.
 - New wiki pages require frontmatter.
 - Use closest matching template from `_Templates/` when available.
 - Minimum frontmatter for new wiki pages: `created`, `modified`, `tags`.
@@ -36,6 +37,7 @@ Read `note-standards.md` for note titles, frontmatter, linking, and visual defau
 
 ## Workflow boundaries
 - Ingest: read raw source, extract claims/topics/entities/dates/open questions, distribute into atomic wiki notes — update existing notes first, create new root wiki page only when durable retrieval value is clear and the topic does not fit an existing note.
+- When ingest touches a high-use topic with an existing Topic Hub, update only that hub's one-sentence orientation, quick references, or index when the new material changes fast lookup or navigation. Put procedure/how-to overflow in a Quickstart note or atomic subnote. Do not create separate yellowbook or index notes for the same topic.
 - If ingest creates a new note, and that note is AI-created, set frontmatter `llm-wiki-created: true`.
 - Query: search wiki first, consult raw only when wiki is missing, stale, incomplete, or disputed.
 - Lint: audit knowledge quality, not prose style.

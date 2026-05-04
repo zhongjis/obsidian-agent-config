@@ -22,6 +22,7 @@ Use `../_llm-wiki-references/obsidian-cli-fast-path.md` for common search/read/c
 1. **Identify what is worth preserving.** Decisions, frameworks, technical findings, synthesized understanding, clear explanations that took effort. Skip scheduling, exploratory back-and-forth without conclusion, and anything already in the wiki. If nothing material emerged, tell the user and stop.
 
 2. **Search existing wiki first.** Use `obsidian search` on the core topic. Prefer updating an existing durable note over creating a new one — capture into the right atomic note rather than producing a duplicate.
+   - If the topic already has a Topic Hub, update only its one-sentence orientation, `# Quick reference`, or `# Index`; put procedural overflow in a concise Quickstart note instead of adding synthesis sections to the hub.
 
 3. **Classify content type → pick template.** Follow [[2026-04-21 LLM-Wiki Workflow#When to Write What]]:
 
@@ -31,6 +32,7 @@ Use `../_llm-wiki-references/obsidian-cli-fast-path.md` for common search/read/c
    | Meeting, session, or time-bound working note | `_Templates/core/Dated Working Note.md` | `llm-wiki/dated` |
    | Digest of an external source discussed | `_Templates/core/Source Digest.md` | `llm-wiki/source` |
    | Quick scratch capture | `_Templates/Quick Note.md` | `llm-wiki/dated` + topic tag |
+   | High-use topic landing page with one-sentence orientation, quick links, and subnote navigation only | `_Templates/core/Topic Hub.md` | `llm-wiki/durable` + category/domain tags |
 
 4. **Rewrite as declarative knowledge.**
    - Not: "The user asked about X and the assistant explained..."
@@ -46,6 +48,7 @@ Use `../_llm-wiki-references/obsidian-cli-fast-path.md` for common search/read/c
    - Follow `note-standards.md` for title, frontmatter, linking, and visual defaults.
 
 6. **Update `index.md`** if present and the new note fits an existing section. Do not create `hot.md` — this vault does not use it. Activity log at `llm-wiki-internal/log.md` is optional; append only when user asks or task is materially large.
+   If a Topic Hub exists for the topic, let the hub own navigation only; keep `index.md` to a single pointer where possible.
 
 7. **Confirm to user.** Report the saved path, title, tags, and related wiki pages linked.
 

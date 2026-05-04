@@ -10,6 +10,13 @@ Read `AGENTS.md` and `vault-rules.md` first. This file defines vault-specific no
 - When an existing note grows beyond scope, split it: extract secondary topics into new notes, leave wikilinks in the original.
 - Atomic does not mean shallow. A note can be detailed and thorough about its single topic.
 
+## Topic Hubs
+- A Topic Hub is a sanctioned landing page for a high-use system or topic whose URLs, config references, and subnotes are otherwise hard to find quickly.
+- Filename/title stays `YYYY-MM-DD Topic` (for example, `2026-04-30 Floodgate`), not `Topic Hub` or `Topic Yellowbook`. Use aliases for the short topic name when useful.
+- Strict structure: one sentence of summary/orientation, then `# Quick reference`, then `# Index`. No `# Summary`, `# Key points`, architecture sections, checklists, or other body synthesis belong in a hub.
+- Keep source-of-truth details in atomic subnotes. Put procedural overflow in a concise `YYYY-MM-DD Topic Quickstart` note when needed.
+- Do not create a separate yellowbook or index note when a Topic Hub exists.
+
 ## Placement
 - Root `.md` files are wiki pages. Keep wiki pages flat in vault root. Exception: operational log in `llm-wiki-internal/log.md`.
 - `_Templates/` stores Templater templates only.
@@ -32,6 +39,7 @@ Read `AGENTS.md` and `vault-rules.md` first. This file defines vault-specific no
 - If no template fits, add minimum frontmatter: `created`, `modified`, `tags`.
 - Recommended for new/updated notes: `summary` (one-line ≤200 chars for cheap AI retrieval), `sources` (list of raw paths or URLs for provenance).
 - When tagging, include one role tag (`llm-wiki/durable`, `llm-wiki/dated`, or `llm-wiki/source`). For new notes, also consider a category tag: `llm-wiki/concept`, `llm-wiki/entity`, `llm-wiki/reference`, or `llm-wiki/synthesis`.
+- Topic Hubs usually use `llm-wiki/durable` plus `llm-wiki/reference` or `llm-wiki/synthesis`, along with domain tags. Avoid adding a new hub-specific tag unless the vault already uses one.
 - Preserve meaningful existing fields such as `aliases`, `type`, `source`, `wiki`, `expense`, or `total_cost`.
 - Only normalize frontmatter on notes you create or materially update.
 - When materially updating a note with legacy `#zettelkasten/*` tags, reclassify to appropriate `llm-wiki/*` tags. See [[2026-04-21 LLM-Wiki Workflow]] for migration mapping.

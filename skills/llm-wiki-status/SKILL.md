@@ -74,6 +74,7 @@ Then report:
    - Zero-incoming durable pages → link candidates.
    - Fragmented tag clusters → cross-linker targets.
    - Sink hubs → cross-linker targets.
+   - Fragmented high-use clusters with repeated URLs/config references → suggest a strict Topic Hub (one-sentence orientation, `# Quick reference`, `# Index` only), plus a Quickstart note if procedures need a home.
 
 **Output:** report in chat. If user explicitly asks to persist, write `_insights.md` (or `llm-wiki-log/insights-YYYY-MM-DD.md`) with the above sections. Do not write files by default.
 

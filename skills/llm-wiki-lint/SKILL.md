@@ -23,6 +23,7 @@ Audit for:
 - stale claims
 - contradictions between notes
 - duplicate or fragmented coverage
+- fragmented high-use topic clusters that need a strict Topic Hub for one-sentence orientation, quick references, and subnote navigation
 - weak or missing cross-links
 - orphan pages
 - entities or concepts that deserve durable pages
@@ -52,6 +53,7 @@ Prefer a concise maintenance report with sections like:
 - orphan / weakly linked notes
 - missing durable pages
 - metadata / retrieval issues
+- missing or non-strict Topic Hubs for clustered/high-use topics
 - recommended next actions
 
 Each finding should include:
@@ -70,5 +72,6 @@ Each finding should include:
 - Do not turn this into prose nitpicking.
 - Do not bulk-retrofit untouched legacy notes.
 - Do not reorganize vault structure unless user explicitly asks.
+- Do not recommend Topic Hub creation for every cluster; reserve it for high-use systems/topics where quick references or navigation are causing retrieval pain, and require the strict shape: one-sentence orientation, `# Quick reference`, `# Index` only. Recommend Quickstart notes for procedural overflow.
 - Do not silently fix everything unless user asked for direct maintenance.
 - Do not invent or enforce ad-hoc metadata beyond required vault fields such as `llm-wiki-ingested` and `llm-wiki-created` unless evidence shows an existing workflow needs it.
