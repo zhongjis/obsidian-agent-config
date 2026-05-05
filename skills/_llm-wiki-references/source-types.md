@@ -17,7 +17,7 @@ Read `AGENTS.md` and `vault-rules.md` first. This file covers source-routing det
 | Spreadsheets / tabular files (`.xlsx`, `.xlsm`, `.csv`, `.tsv`) | Use spreadsheet-oriented tooling/skill. Extract structure, key rows, metrics, trends, and derived conclusions. |
 | Images (`.png`, `.jpg`, `.webp`, `.gif`) | Inspect image directly. If text matters, use OCR-capable tooling if available. Summarize both visible content and textual evidence separately. |
 | Web URLs / GitHub pages | Fetch readable content first, then ingest. |
-| YouTube / video / audio transcript sources | Fetch transcript or media analysis first. Use prompt-aware extraction when needed, then ingest resulting content. |
+| YouTube / video / audio transcript sources | Use `yt-dlp` first to fetch metadata and available subtitles/transcripts. If no transcript is available, use `yt-dlp` to obtain audio/video for transcription or media analysis. Use prompt-aware extraction when the user asks about a specific moment or visual/audio detail, then ingest resulting content. |
 
 ## Mixed-media guidance
 - If source has markdown plus linked images, read text first, then inspect images only when they add meaning.

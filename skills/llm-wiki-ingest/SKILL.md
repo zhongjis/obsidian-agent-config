@@ -48,6 +48,7 @@ If needed CLI use case is not listed there, fall back to global `obsidian-cli` s
 
 ## Source routing
 Follow `../_llm-wiki-references/source-types.md`.
+For YouTube/video URLs, route through `yt-dlp` first: fetch metadata and available subtitles/transcripts; if transcript is unavailable, use downloaded audio/video for transcription or media analysis before synthesis.
 
 ## Stop conditions
 - If source type is unsupported or blocked, stop and ask user.
